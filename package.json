@@ -1,0 +1,14 @@
+{
+  "name": "resume-analyzer",
+  "version": "1.0.0",
+  "description": "Full-stack AI Resume Analyzer — MERN stack",
+  "scripts": {
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\"",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
