@@ -25,7 +25,11 @@ app.use(morgan("dev")); // HTTP request logger
 // ─── CORS Configuration ─────────────────────────────────────────────────────
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "http://localhost:3001",
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:3001",
+      "https://resume-analyzer-red-five.vercel.app"
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
