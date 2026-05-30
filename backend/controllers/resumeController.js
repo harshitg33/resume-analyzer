@@ -32,8 +32,15 @@ const uploadResume = async (req, res) => {
     const atsCheck = checkATSCompatibility(rawText, sections);
 
     // Step 5: Generate AI suggestions
-    const aiSuggestions = await generateAISuggestions(rawText, skills, atsCheck);
-
+    // Step 5: Temporary AI suggestions (for testing)
+const aiSuggestions = {
+  summary: "Resume analyzed successfully",
+  improvements: [
+    "Add more project details",
+    "Use stronger action verbs",
+    "Include measurable achievements"
+  ]
+};
     // Step 6: Attempt to extract candidate name (first non-empty line, heuristic)
     const firstLine = rawText.split("\n").find((l) => l.trim().length > 2);
     const candidateName = firstLine && firstLine.length < 60 ? firstLine.trim() : undefined;
